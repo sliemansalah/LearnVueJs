@@ -72,6 +72,66 @@
           <div class="box" :style="myStyle"></div>
           <div class="box" :style="[myStyle, {height:width + 'px'}]"></div>
         </div>
+     <hr>
+     <h1 class="text-center" style="color:red;">Section 3 on videos</h1>
+     <h3 class="title">v-if</h3>
+     <div class="text-center">
+         <p v-if="show">you can see mee</p>
+          <!-- <p v-else>not see me</p> -->
+          <p>you can also see me too </p>
+         <button @click="show = !show">Switch</button>
+
+         <template v-if="show">
+             <h1>head1</h1>
+             <p>p1</p>
+         </template>
+           <template v-else>
+             <h1>head2</h1>
+         </template>
+
+          <p v-show="show">show me</p>
+          <p v-show="!show">hide me</p>
+           <!-- <template v-show="show">
+             <h1>head1</h1>
+             <p>p1</p>
+         </template>
+          <template v-show="!show">
+             <h1>head2</h1>
+         </template> -->
+     </div>
+     <hr>
+          <h3 class="title">v-for</h3>
+           <div style="margin-left:45%;">
+            <ul>
+                <li v-for="(item, i) in list" :key="i">{{ i+1 }} -  {{ item }}</li>
+            </ul>
+           </div>
+           <div style="text-align:center;">
+            <div v-for="(item2, i) in list" :key="i">
+                <h1>{{item2}}</h1>
+                <p>{{i}}</p>
+            </div>
+           </div>
+           <hr>
+             <h3 class="title">looping through objects</h3>
+     <div class="text-center">
+        <ul>
+            <li v-for="person in persons" :key="person">
+                <div v-for="(value, key, index) in person" :key="key">{{ key }}: {{ value }}  ({{ index }})</div>
+                <hr>
+            </li>
+        </ul>
+        <span v-for="n in 10" :key="n">{{ n }}</span> <!-- key = to keeping track of element  -->
+        <hr>
+     </div>
+     <hr>
+    <h1 style="color:red">Section 5</h1>
+    <h3 class="title">Lifecycle</h3>
+    <div class="text-center">
+        <h2>review console</h2>
+        <button @click="title = 'Changed'">Update title</button>
+        <button @click="destroy">Destroy</button>
+    </div>
 </div>
 </template>
 <script>
@@ -89,6 +149,12 @@ export default {
             color:'green',
             color2:'orange',
             width:100,
+            show:true,
+            list:['meat','fruit','cookies'],
+            persons:[
+                {name:' Max', age:'27', color:'red'},
+                {name: 'Anna', age:'unknown', color:'blue'}
+            ]
         }
     },
     computed:{
@@ -138,8 +204,35 @@ export default {
         },
         result(){
             return this.counter > 5 ? 'greater than 5 ' : 'smaller than 5' 
+        },
+        destroy(){
+            this.$destroy();
         }
-    }
+    },
+    beforeCreate(){
+       alert('beforeCreate')
+    },
+    created(){
+       alert('created')
+    },
+     beforeMount(){
+       alert('beforeMount')
+    },
+    mounted(){
+       alert('mounted')
+    },
+     beforeUpdate(){
+       alert('beforeUpdate')
+    },
+    updated(){
+       alert('updated')
+    },
+     beforeDestroy(){
+       alert('beforeDestroy')
+    },
+    destroyed(){
+       alert('destroyed')
+    },
 }
 </script>
 <style>
@@ -164,4 +257,8 @@ export default {
 .green {
     background-color: green;
 }
+ul li {
+    list-style: none;
+}
+
 </style>
