@@ -125,12 +125,20 @@
         <hr>
      </div>
      <hr>
-    <h1 style="color:red">Section 5</h1>
+    <h1 style="color:red;text-align:center;">Section 5</h1>
     <h3 class="title">Lifecycle</h3>
     <div class="text-center">
-        <h2>review console</h2>
+        <h2>return alert to checkit</h2>
         <button @click="title = 'Changed'">Update title</button>
         <button @click="destroy">Destroy</button>
+    </div>
+      <h1 style="color:red;text-align:center;">Section 6</h1>
+    <h3 class="title">WorkFlows</h3>
+    <div class="text-center">
+        <p>Simple -> cdn</p>
+        <p>webpack-simple -> basic webpack</p>
+        <p>webpack -> include testing</p>
+        <p>browserify/browserify-simple</p>
     </div>
 </div>
 </template>
@@ -210,28 +218,28 @@ export default {
         }
     },
     beforeCreate(){
-       alert('beforeCreate')
+    //    alert('beforeCreate')
     },
     created(){
-       alert('created')
+    //    alert('created')
     },
      beforeMount(){
-       alert('beforeMount')
+    //    alert('beforeMount')
     },
     mounted(){
-       alert('mounted')
+    //    alert('mounted')
     },
      beforeUpdate(){
-       alert('beforeUpdate')
+    //    alert('beforeUpdate')
     },
     updated(){
-       alert('updated')
+    //    alert('updated')
     },
      beforeDestroy(){
-       alert('beforeDestroy')
+    //    alert('beforeDestroy')
     },
     destroyed(){
-       alert('destroyed')
+    //    alert('destroyed')
     },
 }
 </script>

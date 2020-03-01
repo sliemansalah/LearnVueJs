@@ -26,6 +26,16 @@ const vueCliIndex = resolve => {
     "proj"
   );
 };
+const comps = resolve => {
+  require.ensure(
+    ["./components/comps/index.vue"],
+    () => {
+      resolve(require("./components/comps/index.vue"));
+    },
+    "proj"
+  );
+};
+
 const notFound = resolve => {
   require.ensure(
     ["./components/notFound.vue"],
@@ -221,9 +231,14 @@ export const routes = [
     name: "gettingStartedArgumentsEventModifiers"
   },
   {
-    path: "/vue-cli/index",
+    path: "/vue-cli",
     component: vueCliIndex,
     name: "vueCliIndex"
+  },
+  {
+    path: "/components",
+    component: comps,
+    name: "comps"
   },
   {
     path: "/not-found",

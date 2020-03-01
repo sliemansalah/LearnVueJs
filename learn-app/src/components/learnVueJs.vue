@@ -2,7 +2,7 @@
   <div id="learnvuejs">
     <ul class="list-group">
       <router-link to="/getting-started" tag="li" class="list-group-item">Getting Started</router-link>
-      <router-link to="/vue-cli/index" tag="li" class="list-group-item">Vue Cli</router-link>
+      <router-link to="/vue-cli" tag="li" class="list-group-item">Vue Cli</router-link>
       <router-link to="/components" tag="li" class="list-group-item">Components</router-link>
       <router-link to="/forms" tag="li" class="list-group-item">Forms</router-link>
       <router-link to="/directives" tag="li" class="list-group-item">Directives</router-link>

@@ -7,7 +7,7 @@
           <a class="nav-link">Getting Started</a>
         </router-link>
 
-        <router-link to="/vue-cli/index" tag="li" class="nav-item">
+        <router-link to="/vue-cli" tag="li" class="nav-item">
           <a class="nav-link">Vue CLI</a>
         </router-link>
         <router-link to="/components" tag="li" class="nav-item">
