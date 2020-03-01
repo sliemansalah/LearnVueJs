@@ -34,7 +34,18 @@ don't use minifed version during development.
 يلزم تسطيب نود جي اس ، وهي بيئة عمل توفر العمل لدى مشاريع فيو جي اس
 
 
-# dist
+# different builds 
+
+في 
+dist
+دليل حزمة npm
+ستجد العديد من  فيو جي اس بيلدرز والفرق بينهما
+-----------
+1- UMD  -> vue.js
+2- CommonJS	 -> vue.common.js
+3- ES Module (for bundlers)	 -> vue.esm.js
+4- ES Module (for browsers) -> vue.esm.browser.js
+
 
 vue.js -> full
 vue.runtime.js -> runtime only
