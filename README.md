@@ -199,7 +199,7 @@ NODE_ENV=production browserify -g envify -e main.js | uglifyjs -c -m > build.js
 
 git clone https://github.com/vuejs/vue.git node_modules/vue
 cd node_modules/vue
-npm install
+npm install / yarn install
 npm run build
 
 # Bower
