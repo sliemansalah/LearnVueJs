@@ -296,3 +296,112 @@ methods: {
 
 
 
+# Event Modifiers
+.stop -> stop propagation 
+.prevent -> prevent default
+.capture -> capture mode when adding the event listener
+ an event targeting an inner element is handled here before being handled by that element
+.self
+.once
+.passive
+
+<a v-on:click.stop.prevent="doThat"></a> -> chained
+
+<div v-on:scroll.passive="onScroll">...</div>
+
+
+# ملاحظة
+
+لا تستخدم .passive و .prevent معًا ، لأنه سيتم تجاهل .prevent وربما يعرض لك المتصفح تحذيرًا. تذكر أن .passive يتصل بالمتصفح الذي لا تريد منع السلوك الافتراضي للحدث.
+
+
+# key-code
+
+enter
+.tab
+.delete (captures both “Delete” and “Backspace” keys)
+.esc
+.space
+.up
+.down
+.left
+.right
+
+# ملاحظة
+المفاتيح تتعارض مع الاكسبلورر 9
+
+# System Modifier Keys
+
+.ctrl
+.alt
+.shift
+.meta -> command key
+
+# .exact Modifier
+
+<!-- this will fire even if Alt or Shift is also pressed -->
+<button v-on:click.ctrl="onClick">A</button>
+
+<!-- this will only fire when Ctrl and no other keys are pressed -->
+<button v-on:click.ctrl.exact="onCtrlClick">A</button>
+
+<!-- this will only fire when no system modifiers are pressed -->
+<button v-on:click.exact="onClick">A</button>
+
+# Mouse Button Modifiers
+.left
+.right
+.middle
+
+
+# Modifiers
+
+# .lazy
+<input v-model.lazy="msg"> 
+lazy modifier to instead sync after change
+
+# .number
+<input v-model.number="age" type="number">
+
+# .trim
+<input v-model.trim="msg">
+
+# v-model
+
+
+# components 
+
+1- Global Registration
+Vue.component('my-component-name', {
+  // ... options ...
+})
+
+2- Local Registration
+
+var ComponentA = { /* ... */ }
+var ComponentB = { /* ... */ }
+var ComponentC = { /* ... */ }
+
+new Vue({
+  el: '#app',
+  components: {
+    'component-a': ComponentA,
+    'component-b': ComponentB
+  }
+})
+
+Or if you’re using ES2015 modules, such as through Babel and Webpack, that might look more like:
+
+import ComponentA from './ComponentA.vue'
+
+export default {
+  components: {
+    ComponentA
+  },
+  // ...
+}
+
+
+
+
+
