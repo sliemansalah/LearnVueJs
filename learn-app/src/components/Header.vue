@@ -14,7 +14,7 @@
           <a class="nav-link">Components</a>
         </router-link>
 
-        <router-link to="/fomrs" tag="li" class="nav-item">
+        <router-link to="/forms" tag="li" class="nav-item">
           <a class="nav-link">Forms</a>
         </router-link>
 

@@ -1,3 +1,4 @@
+import forms from  './components/forms/index.vue';
 /* Use loading routes lazily */
 const learnVueJs = resolve => {
   require.ensure(
@@ -239,6 +240,11 @@ export const routes = [
     path: "/components",
     component: comps,
     name: "comps"
+  },
+  {
+    path: "/forms",
+    component: forms,
+    name: "forms"
   },
   {
     path: "/not-found",
