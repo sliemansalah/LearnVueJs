@@ -2,7 +2,17 @@
   <div>
       <!-- <p>A wonderful Quote</p> -->
       <!-- <p> {{ quote }}</p> -->
-      <slot></slot>
+      <!-- <slot></slot> -->
+      <div class="title">
+          <slot name="title"></slot>
+          <!-- <span style="color:#ccc;"><slot name="subtitle"></slot></span> -->
+         <span style="color:#ccc;"><slot></slot></span>
+      </div>
+      <hr>
+      <div>
+          <!-- <slot name="content"></slot> -->
+           <slot></slot>
+      </div>
   </div>
 </template>
 

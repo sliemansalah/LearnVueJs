@@ -14,11 +14,27 @@
 
       <div class="text-center container">
          <!-- <app-quote quote="A wonderfull quote!"></app-quote> -->
-         <app-quote>
-         <!-- <h2>The Quote</h2> -->
-          <h2> {{ quoteTitle }} </h2>
-         <p>A wonderfull Quote</p>
+         <button @click="selectedComponent = 'appQuote'">Quote</button>
+         <button @click="selectedComponent = 'appAuthor'">Author</button>
+         <button @click="selectedComponent = 'appNew'">New</button>
+         <hr>
+         <p>{{ selectedComponente }} </p>
+        
+        <keep-alive>
+             <component :is="selectedComponent">
+             <p>Default Content</p>
+         </component>
+        </keep-alive>
+        <!-- 
+             <app-quote>
+         -- <h2>The Quote</h2> 
+          <h2 slot="title"> {{ quoteTitle }} </h2>
+         -- <p slot="content">A wonderfull Quote</p> 
+          <p>A wonderfull Quote</p>
          </app-quote>
+            -->
+        <!-- <app-author></app-author> -->
+        
        
      </div>
 
@@ -28,11 +44,14 @@
 import mycmp from './my-cmp.vue';
 import User from './User.vue';
 import Quote from './Quote.vue';
+import Author from './Author.vue';
+import New from './New.vue';
 
 export default {
     data(){
         return {
-         quoteTitle: 'The Quote'
+         quoteTitle: 'The Quote',
+         selectedComponent: 'appQuote'
         }
     },
    components:{
@@ -40,6 +59,8 @@ export default {
        'myCmp': mycmp,
        appUser: User,
        appQuote: Quote,
+       appAuthor:Author,
+       appNew: New
 
    }
 }
