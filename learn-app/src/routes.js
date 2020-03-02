@@ -1,4 +1,7 @@
 import forms from  './components/forms/index.vue';
+import directivesComp from  './components/directivesComp/Index.vue';
+import filtersMixins from  './components/filtersMixins/Index.vue';
+
 /* Use loading routes lazily */
 const learnVueJs = resolve => {
   require.ensure(
@@ -245,6 +248,16 @@ export const routes = [
     path: "/forms",
     component: forms,
     name: "forms"
+  },
+  {
+    path: "/directives",
+    component: directivesComp,
+    name: "directivesComp"
+  },
+  {
+    path: "/filters-mixins",
+    component: filtersMixins,
+    name: "filtersMixins"
   },
   {
     path: "/not-found",
