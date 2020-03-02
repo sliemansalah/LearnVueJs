@@ -3,6 +3,7 @@ import directivesComp from  './components/directivesComp/Index.vue';
 import filtersMixins from  './components/filtersMixins/Index.vue';
 import animationsTransitions from  './components/animationsTransitions/Index.vue';
 import httpRouting from  './components/httpRouting/Index.vue';
+import vuexComp from  './components/vuexComp/Index.vue';
 
 /* Use loading routes lazily */
 const learnVueJs = resolve => {
@@ -165,6 +166,7 @@ const gettingStartedArgumentsEventModifiers = resolve => {
   );
 };
 
+
 export const routes = [
   {
     path: "",
@@ -271,6 +273,12 @@ export const routes = [
     component: httpRouting,
     name: "httpRouting"
   },
+  {
+    path: "/vuex",
+    component: vuexComp,
+    name: "vuexComp"
+  },
+  
   {
     path: "/not-found",
     component: notFound,
