@@ -12,16 +12,35 @@
          <app-user></app-user>
      </div>
 
+      <div class="text-center container">
+         <!-- <app-quote quote="A wonderfull quote!"></app-quote> -->
+         <app-quote>
+         <!-- <h2>The Quote</h2> -->
+          <h2> {{ quoteTitle }} </h2>
+         <p>A wonderfull Quote</p>
+         </app-quote>
+       
+     </div>
+
 </div>
 </template>
 <script>
 import mycmp from './my-cmp.vue';
-import User from './User.vue'
+import User from './User.vue';
+import Quote from './Quote.vue';
+
 export default {
+    data(){
+        return {
+         quoteTitle: 'The Quote'
+        }
+    },
    components:{
     //    'my-cmp': mycmp,
        'myCmp': mycmp,
-       appUser: User
+       appUser: User,
+       appQuote: Quote,
+
    }
 }
 </script>
