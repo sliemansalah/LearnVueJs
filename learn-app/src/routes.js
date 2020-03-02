@@ -1,6 +1,7 @@
 import forms from  './components/forms/index.vue';
 import directivesComp from  './components/directivesComp/Index.vue';
 import filtersMixins from  './components/filtersMixins/Index.vue';
+import animationsTransitions from  './components/animationsTransitions/Index.vue';
 
 /* Use loading routes lazily */
 const learnVueJs = resolve => {
@@ -258,6 +259,11 @@ export const routes = [
     path: "/filters-mixins",
     component: filtersMixins,
     name: "filtersMixins"
+  },
+  {
+    path: "/animations-transitions",
+    component: animationsTransitions,
+    name: "animationsTransitions"
   },
   {
     path: "/not-found",

@@ -3,8 +3,10 @@
       <h3>Filters</h3>
        <p>{{ text | toUppercase}}</p>
         <p>{{ text | toUppercase | to-lowercase}}</p>
-        <p>{{ text | toUppercase | toLowercase}}</p> <!-- not resolve correct -->
+        <!-- <p>{{ text | toUppercase | toLowercase}}</p> -->
+        <!-- not resolve correct -->
         <hr>
+        <button @click="fruites.push('Berries')">Add New Item</button>
         <input type="text" v-model="filterText">
         <ul>
             <!-- <li v-for="fruit in fruits" :key="fruit">
@@ -27,6 +29,7 @@ export default {
     data(){
         return {
             text: 'Hello there',
+            fruitMixin,
             // fruites: ['Apple', 'Banana', 'Mango', 'Melon'],
             // filterText: ''
         }

@@ -29,6 +29,12 @@ Vue.filter('to-lowercase',(value) => {
   return value.toLowerCase();
 });
 
+Vue.mixin({
+  created(){
+    // console.log('Global Mixin - Created Hook');
+  }
+})
+
 import { routes } from "./routes";
 
 // export const eventBus = new Vue();
