@@ -1,7 +1,22 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import VueResource from "vue-resource";
 import App from "./App.vue";
 
+Vue.use(VueResource);
+// Vue.http.options.root = "https://vuejs-http-5fddb.firebaseio.com/data.json";
+Vue.http.options.root = "https://vuejs-http-5fddb.firebaseio.com";
+// Vue.http.options.headers
+Vue.http.interceptors.push((request, next) => {
+  // alert(request);
+    if(request.method == 'POST'){
+      request.method = 'PUT'
+    }
+    // next();
+    next(response => {
+      response.json = () => {return {messages: response.body}}
+    });
+})
 Vue.directive('highlight', {
   bind(el, binding){
     // el.style.backgroundColor = 'green';
