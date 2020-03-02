@@ -66,9 +66,31 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes,
-  mode: "history" /* or hash */
+  mode: "history" /* or hash */,
+
+  scrollBehavior(to,from,savedPosition){
+    if(savedPosition){
+      return savedPosition;
+    }
+    if(to.hash){
+      return {selector: to.hash}
+    }
+    // return {x: 0 , y:0 }
+    // return {x: 0 , y:700 }
+  }
 });
 
+// router.beforeEach((to, from, next) => {
+//   alert('global beforeeach')
+//   // next('/');
+//   // next('');
+//   next();
+//   // if(true){
+//   //   next();
+//   // }else{
+//   //   next(false);
+//   // }
+// })
 new Vue({
   render: h => h(App),
   router
