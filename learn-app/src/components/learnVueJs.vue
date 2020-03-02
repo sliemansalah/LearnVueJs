@@ -14,8 +14,6 @@
       >Animations & Transitions</router-link>
       <router-link to="/http-routing" tag="li" class="list-group-item">Http & Routing</router-link>
       <router-link to="/vuex" tag="li" class="list-group-item">VUEX</router-link>
-      <router-link to="/deploying" tag="li" class="list-group-item">Deploying</router-link>
-      <router-link to="/axios" tag="li" class="list-group-item">Axios</router-link>
     </ul>
   </div>
 </template>

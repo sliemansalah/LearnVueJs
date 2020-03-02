@@ -37,13 +37,6 @@
         <router-link to="/vuex" tag="li" class="nav-item">
           <a class="nav-link">VUEX</a>
         </router-link>
-
-        <router-link to="/deploying" tag="li" class="nav-item">
-          <a class="nav-link">Deploying</a>
-        </router-link>
-        <router-link to="/axios" tag="li" class="nav-item">
-          <a class="nav-link">Axios</a>
-        </router-link>
       </ul>
     </div>
   </nav>
