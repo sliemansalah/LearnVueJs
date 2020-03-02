@@ -43,6 +43,21 @@
          >
           <div class="alert alert-info" v-show="show2">This is some info</div>
       </transition>
+
+ <transition 
+    @before-enter="beforeEnter"
+    @enter="enter"
+    @after-enter="afterEnter"
+    @enter-cancelled="enter-cancelled"
+
+    @before-leave="beforeLeave"
+    @leave="leave"
+    @after-leave="afterLeave"
+    @leave-cancelled="leaveCancelled"
+         >
+          <div style="width:100px;height:100px;background-color:lightgreen;" v-if="show2">This is some info</div>
+      </transition>
+
   </div>
 </template>
 
@@ -53,6 +68,33 @@ export default {
             show:false,
             show2:false
         }
+    },
+    methods:{
+        // beforeEnter(){
+        //     alert('beforeEnter')
+        // },
+        // enter(el,done){
+        //     alert('enter')
+        //     done();
+        // },
+        // afterEnter(){
+        //     alert('after enter')
+        // },
+        //  enterCancelled(){
+        //     alert('enterCancelled')
+        // },
+        // beforeLeave(){
+        //     alert('beforeLeave')
+        // },
+        // leave(){
+        //     alert('Leave')
+        // },
+        // afterLeave(){
+        //     alert('afterLeave')
+        // },
+        // leaveCancelled(){
+        //     alert('leaveCancelled')
+        // }
     }
 }
 </script>
